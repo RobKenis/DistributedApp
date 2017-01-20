@@ -19,6 +19,7 @@ public class MessageDbStub implements IMessageDB{
     private ArrayList<Message>messages = new ArrayList<Message>();
 
     public MessageDbStub(){
+        System.out.println("MessageDbStub created.");
        this.messages = new ArrayList<Message>();
         this.messages.add(new Message("Rob", "Eerste message"));
         this.messages.add(new Message("Theump", "Tweede message."));

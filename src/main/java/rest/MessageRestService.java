@@ -3,7 +3,9 @@ package rest;
 import domain.Message;
 import domain.MessageInput;
 import service.MessageService;
+import service.TimerService;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -44,5 +46,6 @@ public class MessageRestService {
         messageService.getMessageDB().addMessage(new Message(input.getUser(), input.getMessage()));
         return messageService.getMessageDB().getAllMessages();
     }
+
 
 }
