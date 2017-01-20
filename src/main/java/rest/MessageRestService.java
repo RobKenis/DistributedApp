@@ -47,5 +47,11 @@ public class MessageRestService {
         return messageService.getMessageDB().getAllMessages();
     }
 
+    @GET
+    @Path("/db")
+    public String getDbType(){
+        return messageService.getMessageDB().getName();
+    }
+
 
 }

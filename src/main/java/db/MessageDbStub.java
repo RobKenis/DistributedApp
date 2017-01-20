@@ -3,6 +3,7 @@ package db;
 import domain.Message;
 
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.inject.Alternative;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
  */
 @Named
 @RequestScoped
-@Default
+@Alternative
 public class MessageDbStub implements IMessageDB{
 
     private ArrayList<Message>messages = new ArrayList<Message>();
@@ -42,5 +43,9 @@ public class MessageDbStub implements IMessageDB{
             }
         }
         return out;
+    }
+
+    public String getName() {
+        return "MessageDbStub";
     }
 }

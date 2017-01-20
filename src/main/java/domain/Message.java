@@ -1,14 +1,25 @@
 package domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 
 /**
  * Created by Rob on 20/01/2017.
  */
+@Entity
 public class Message {
 
+    @GeneratedValue
+    @Id
+    private long id;
     private String user, message;
     private Date timestamp;
+
+    public Message(){
+
+    }
 
     public Message(String user, String message){
         this.setUser(user);

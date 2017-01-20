@@ -30,6 +30,11 @@
           <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
           <element id="library" level="project" name="Maven: javax.ejb:ejb-api:3.0" />
           <element id="library" level="project" name="Maven: javax:javaee-web-api:7.0" />
+          <element id="library" level="project" name="Maven: org.apache.derby:derby:10.13.1.1" />
+          <element id="library" level="project" name="Maven: org.apache.derby:derbyclient:10.13.1.1" />
+          <element id="library" level="project" name="Maven: org.eclipse.persistence:eclipselink:2.5.0" />
+          <element id="library" level="project" name="Maven: org.eclipse.persistence:javax.persistence:2.1.0" />
+          <element id="library" level="project" name="Maven: org.eclipse.persistence:commonj.sdo:2.1.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

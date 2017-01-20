@@ -14,4 +14,5 @@ public interface IMessageDB {
     public ArrayList<Message> getAllMessages();
     public void addMessage(Message m);
     public ArrayList<Message>getMessagesFromUser(String username);
+    public String getName();
 }
