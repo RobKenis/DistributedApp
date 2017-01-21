@@ -4,8 +4,6 @@ import domain.Message;
 
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Alternative;
-import javax.enterprise.inject.Default;
-import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.ArrayList;
 
@@ -38,7 +36,7 @@ public class MessageDbStub implements IMessageDB{
     public ArrayList<Message> getMessagesFromUser(String username) {
         ArrayList<Message>out = new ArrayList<Message>();
         for (Message m : this.getAllMessages()){
-            if (m.getUser().equals(username)){
+            if (m.getMsgUser().equals(username)){
                 out.add(m);
             }
         }

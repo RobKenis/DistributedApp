@@ -14,25 +14,25 @@ public class Message {
     @GeneratedValue
     @Id
     private long id;
-    private String user, message;
+    private String msgUser, message;
     private Date timestamp;
 
     public Message(){
 
     }
 
-    public Message(String user, String message){
-        this.setUser(user);
+    public Message(String msgUser, String message){
+        this.setMsgUser(msgUser);
         this.setMessage(message);
         this.setTimestamp(new Date());
     }
 
-    public String getUser() {
-        return user;
+    public String getMsgUser() {
+        return msgUser;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setMsgUser(String user) {
+        this.msgUser = user;
     }
 
     public String getMessage() {

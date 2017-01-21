@@ -22,19 +22,17 @@ import java.util.List;
 public class MessageDbJPA implements IMessageDB {
 
     //Deze code is lelijk, sorry he
-    private static final String PERSISTENCE_UNIT_NAME = "messages";
+    private static final String PERSISTENCE_UNIT_NAME = "Messages";
     private EntityManagerFactory factory;
     private EntityManager em;
 
     public MessageDbJPA(){
-     //   factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
-      //  em = factory.createEntityManager();
+        factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+        em = factory.createEntityManager();
     }
 
     public ArrayList<Message> getAllMessages() {
         try {
-            factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
-            em = factory.createEntityManager();
             List<Message> allMessages = em.createQuery("SELECT m FROM Message m").getResultList();
             return new ArrayList<Message>(allMessages);
         } catch (Exception e){
@@ -48,7 +46,7 @@ public class MessageDbJPA implements IMessageDB {
         em.getTransaction().begin();
         em.persist(m);
         em.getTransaction().commit();
-        em.close();
+       // em.close();
     }
 
     public ArrayList<Message> getMessagesFromUser(String username) {
