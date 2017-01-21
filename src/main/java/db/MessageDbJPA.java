@@ -46,7 +46,7 @@ public class MessageDbJPA implements IMessageDB {
         em.getTransaction().begin();
         em.persist(m);
         em.getTransaction().commit();
-       // em.close();
+        em.close();
     }
 
     public ArrayList<Message> getMessagesFromUser(String username) {

@@ -5,14 +5,14 @@ package domain;
  */
 public class MessageInput {
 
-    public String msgUser, Message;
+    public String user, Message;
 
     public String getUser() {
-        return msgUser;
+        return user;
     }
 
     public void setUser(String user) {
-        this.msgUser = user;
+        this.user = user;
     }
 
     public String getMessage() {

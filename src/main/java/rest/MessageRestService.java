@@ -42,9 +42,10 @@ public class MessageRestService {
     @Path("/new")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public ArrayList<Message>addMessage(MessageInput input){
-        messageService.getMessageDB().addMessage(new Message(input.getUser(), input.getMessage()));
-        return messageService.getMessageDB().getAllMessages();
+    public Message addMessage(MessageInput input){
+        Message message = new Message(input.getUser(), input.getMessage());
+        messageService.getMessageDB().addMessage(message);
+        return message;
     }
 
     @GET
