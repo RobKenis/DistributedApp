@@ -3,9 +3,12 @@ package rest;
 import domain.Message;
 import domain.MessageInput;
 import service.MessageService;
+import service.Secured;
 import service.TimerService;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJB;
+import javax.ejb.Schedule;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -23,6 +26,9 @@ public class MessageRestService {
 
     @Inject
     private MessageService messageService;
+
+    @Inject
+    private TimerService timerService;
 
     @GET
     @Path("/all")
@@ -54,5 +60,10 @@ public class MessageRestService {
         return messageService.getMessageDB().getName();
     }
 
-
+    @Secured
+    @GET
+    @Path("/time")
+    public String getTime(){
+        return timerService.sayTime();
+    }
 }

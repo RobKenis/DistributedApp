@@ -13,6 +13,14 @@
            <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
            <param-value>true</param-value>
        </init-param>
+       <init-param>
+           <param-name>jersey.config.server.provider.packages</param-name>
+           <param-value>org.rob.rest;org.rob.service</param-value>
+       </init-param>
+       <init-param>
+           <param-name>com.sun.jersey.spi.container.ContainerRequestFilters</param-name>
+           <param-value>org.rob.service.BasicAuthFilter</param-value>
+       </init-param>
 
        <load-on-startup>1</load-on-startup>
    </servlet>
@@ -30,4 +38,5 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+
 </web-app>

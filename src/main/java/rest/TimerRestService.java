@@ -12,7 +12,6 @@ import javax.ws.rs.Path;
 /**
  * Created by Rob on 20/01/2017.
  */
-@Path("/time")
 @Named
 @RequestScoped
 public class TimerRestService {
