@@ -32,13 +32,14 @@ public class BasicAuthFilter implements javax.ws.rs.container.ContainerRequestFi
         String authorizationHeader =
                 requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
 
-        String[]login = authorizationHeader.split(" ");
-        String username = login[1].split(":")[0];
-        System.out.println(username + " logged on.");
         //Check if the HTTP Authorization header is present and formatted correctly
         if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
             throw new NotAuthorizedException("Authorization header must be provided. Thanks to Rob for the nice feedback :)");
         }
+
+        String[]login = authorizationHeader.split(" ");
+        String username = login[1].split(":")[0];
+        System.out.println(username + " logged on.");
 
         // Extract the token from the HTTP Authorization header
         String token = authorizationHeader.substring("Bearer".length()).trim();

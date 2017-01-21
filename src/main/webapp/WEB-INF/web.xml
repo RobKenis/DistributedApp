@@ -15,7 +15,7 @@
        </init-param>
        <init-param>
            <param-name>jersey.config.server.provider.packages</param-name>
-           <param-value>org.rob.rest;org.rob.service</param-value>
+           <param-value>org.rob.rest; org.rob.config</param-value>
        </init-param>
        <init-param>
            <param-name>com.sun.jersey.spi.container.ContainerRequestFilters</param-name>
