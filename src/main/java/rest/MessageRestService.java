@@ -1,7 +1,9 @@
 package rest;
 
+import com.sun.xml.internal.ws.client.RequestContext;
 import domain.Message;
 import domain.MessageInput;
+import service.BasicAuthFilter;
 import service.MessageService;
 import service.Secured;
 import service.TimerService;
@@ -13,7 +15,10 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.ws.rs.*;
+import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Request;
+import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 
 /**
@@ -29,6 +34,9 @@ public class MessageRestService {
 
     @Inject
     private TimerService timerService;
+
+    @Inject
+    private BasicAuthFilter basicAuthFilter;
 
     @GET
     @Path("/all")

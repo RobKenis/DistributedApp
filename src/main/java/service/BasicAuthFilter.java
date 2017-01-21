@@ -2,6 +2,10 @@ package service;
 
 import com.sun.jersey.core.util.Priority;
 
+import javax.enterprise.context.RequestScoped;
+import javax.enterprise.inject.Alternative;
+import javax.enterprise.inject.Default;
+import javax.inject.Named;
 import javax.ws.rs.NotAuthorizedException;
 import javax.ws.rs.Priorities;
 import javax.ws.rs.container.ContainerRequestContext;
@@ -15,6 +19,7 @@ import java.io.IOException;
  * This filter verify the access permissions for a user
  * based on username and passowrd provided in request
  * */
+@Named
 @Provider
 @Secured
 @Priority(Priorities.AUTHENTICATION)
