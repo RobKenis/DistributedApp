@@ -6,4 +6,4 @@ Aan allen die mijn vragen gelezen hadden, maar niet hebben geantwoord: "ook succ
 mvg
 Rob
 
-PS: deployed in Glassfish 4.1.1 -- works fine
+PS: deployed in Glassfish 4.1.0 -- works fine
