@@ -29,6 +29,7 @@ import java.util.ArrayList;
 @Path("/messages")
 @Named
 @RequestScoped
+@Secured
 public class MessageRestService {
 
     @Inject
@@ -70,7 +71,6 @@ public class MessageRestService {
         return messageService.getMessageDB().getName();
     }
 
-    @Secured
     @GET
     @Path("/time")
     public String getTime(){

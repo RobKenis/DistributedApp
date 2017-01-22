@@ -1,8 +1,6 @@
 package domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -15,6 +13,7 @@ public class Message {
     @Id
     private long id;
     private String msgUser, message;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date timestamp;
 
     public Message(){
